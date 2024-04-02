@@ -66,25 +66,25 @@ if _name_ == "_main_":
     notifier.start()
 
     while True:
-        print("\n1. Agregar tarea")
+        print("\n1. Porfavor agrega una tarea")
         print("2. Marcar tarea como completada")
         print("3. Buscar tarea")
         print("4. Mostrar tareas pendientes")
         print("5. Mostrar tareas completadas")
-        print("6. Salir")
+        print("6. Exit")
 
         choice = input("\nSeleccione una opción: ")
 
         if choice == "1":
             title = input("Ingrese el nombre de la tarea: ")
-            description = input("Ingrese la descripción de la tarea: ")
+            description = input("IAñade la descripcion de la tarea: ")
             due_date_str = input("Ingrese la fecha de vencimiento (YYYY-MM-DD), o presione Enter para omitir: ")
             if due_date_str:
                 due_date = datetime.strptime(due_date_str, "%Y-%m-%d")
             else:
                 due_date = None
             task_manager.add_task(title, description, due_date)
-            print("Tarea agregada exitosamente.")
+            print("Se añado correctamente la tarea.")
 
         elif choice == "2":
             title = input("Ingrese el nombre de la tarea que desea marcar como completada: ")
@@ -123,11 +123,11 @@ if _name_ == "_main_":
                 for task in completed_tasks:
                     print(f"{task['title']} - {task['description']}")
             else:
-                print("No hay tareas completadas.")
+                print("Tareas incompletas.")
 
         elif choice == "6":
             break
 
         else:
-            print("Opción inválida. Por favor, seleccione una opción válida.")
+            print("Porfavor seleccione una opcion valida")
 
